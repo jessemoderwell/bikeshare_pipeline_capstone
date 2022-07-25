@@ -17,32 +17,56 @@ Scripts and dag to transform raw ride data into database formatted for analytics
 ### Data Dictionary
 
 BIKESHARE RIDES
+
 Field | Data type | Description
-trip_id | bigint | a unique id that identifies each ride; 
+
+trip_id | bigint | a unique id that identifies each ride;
+
 gender | varchar(250) | gender of the rider, either M or F;
+
 usertype | varchar(250) | "Customer" is a rider who purchased a 24-Hour Pass; "Subscriber" is a rider who purchased an Annual Membership;
+
 starttime | timestamp | day and time trip started, in CST; 
+
 stoptime | timestamp| day and time trip ended, in CST;
+
 tripduration | varchar(250) | time of trip in minutes; 
+
 latitude_start | double precision | start station latitude;
+
 longitude_start | double precision | start station longitude; 
+
 latitude_end | double precision | end station latitude; 
+
 longitude_end | double precision | end station longitude;
+
 trip_distance | double precision | distance from start station to end station, in meters;
+
 start_neighborhood | varchar(250) | chicago neighborhood start station is contained in;
+
 end_neighborhood | varchar(250) | chicago neighborhood end station is contained in
 
 This dataset comes from Kaggle: https://www.kaggle.com/datasets/yingwurenjian/chicago-divvy-bicycle-sharing-data
 
 E-SCOOTER RIDES
+
 Field | Data type | Description
+
 trip_id | varchar | unique id for each scooter ride;
+
 starttime | timestamp | day and time trip started, in CST;
+
 endtime | timestamp | day and time trip ended, in CST; 
+
 trip_distance | int | distance from start point to end, in meters;
+
 trip_duration | double precision | time of trip in minutes;
+
 vendor | varchar | vendor of the scooter;
-start_neighborhood | varchar | neighborhood where scooter trip started;end_neighborhood | varchar | neighborhood where scooter trip ended
+
+start_neighborhood | varchar | neighborhood where scooter trip started;
+
+end_neighborhood | varchar | neighborhood where scooter trip ended
 
 This dataset is courtesy of the Chicago Data Portal, and came from the 2020 Chicago pilot program: https://data.cityofchicago.org/Transportation/E-Scooter-Trips-2020/3rse-fbp6/data
 
