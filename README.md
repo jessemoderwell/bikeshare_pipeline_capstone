@@ -69,7 +69,7 @@ Field | Data type | Description
 
 <li>vendor | varchar | vendor of the scooter</li>
 
-<li>start_neighborhood | varchar | neighborhood where scooter trip started;</li>
+<li>start_neighborhood | varchar | neighborhood where scooter trip started</li>
 
 <li>end_neighborhood | varchar | neighborhood where scooter trip ended</li>
 
@@ -115,6 +115,9 @@ A3: If that were the case, I would use the create user and alter group sql state
 
 ### Setup
 To run this project, you must set up airflow locally, and make sure the bikeshare_dag.py is in the dags folder, and the scripts and operators directories are in the appropriate places. Then you will need to make sure the aws client is set up in terminal so you can set the credentials with an IAM user. Then you will need to set up the redshift cluster, attach a role to it that contains full s3 and redshift access, make sure it is public and that enhanced VPC is selected. Make sure there is a redshift connection variable created in airflow with the name 'redshift', that all the appropriate fields are populated in dwh.cfg, and your scripts, bootstrap file, and source data are in the correct place in s3. Then activate the dag in airflow and run
+
+### Sample Queries & Output
+In this repository are several screenshots I've included to showcase the final product of this pipeline. neighborhood_metrics_screenshot 1 & 2 show the execution of the select statement from the insert that loads the neighborhood metrics table with data from the two staging tables. staging_bikeshare_count, staging_bikeshare_sample, and the e-scooter versions are screenshots of top 5 sample queries of my staging tables and counts on the number of records in those tables
 
 ### Inspiration
 This project was created for the Udacity Data Engineering Nanodegree course, specifically the Capstone project
